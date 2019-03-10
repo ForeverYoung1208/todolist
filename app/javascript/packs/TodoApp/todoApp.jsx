@@ -8,7 +8,7 @@ export default class TodoApp extends React.Component {
 	render = () => {
 		console.log( ' wwwwwworking')
 		return(
-			<div>working...</div>
+			<div>working...!</div>
 		)
 	}
 
