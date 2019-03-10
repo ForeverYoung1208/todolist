@@ -8,8 +8,12 @@ export default class TodoApp extends React.Component {
 	render = () => {
 		console.log( ' wwwwwworking')
 		return(
-			<div>working...!</div>
+			<div>working...!<span className='fa fa-trash'></span></div>
 		)
 	}
 
 }
+
+
+// onMouseEnter={this.hoverOn} 
+// onMouseLeave={this.hoverOff}
