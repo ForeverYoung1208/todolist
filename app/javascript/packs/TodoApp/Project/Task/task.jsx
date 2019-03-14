@@ -7,17 +7,25 @@ export default class Task extends React.Component {
 	}
 
 	render = () => {
+		const {id, name, priority, deadline, status_id} = this.props.task
 		return(
 			<tr>
-				<td>task1 data1</td>
-				<td>data2</td>
-				<td>data3</td>
+				<td>status {status_id}</td>
+				<td>{name} (id:{id}), till: {deadline}</td>
+				<td>controls</td>
 			</tr>
 		)
 	}
 
 }
 Task.propTypes={
+	task: PropTypes.shape({
+		id: PropTypes.number.isRequired,
+		name: PropTypes.string,
+		priority: PropTypes.number, 
+		deadline: PropTypes.string, 
+		status_id: PropTypes.number,		
+	})
 
 }
 
