@@ -16,7 +16,7 @@ export default class Project extends React.Component {
 		return(
 			<div className="row justify-content-md-center">
 				<div className="col-md-6">
-					<Table bordered className="table_project">
+					<Table className="table_project">
 						<caption align="top"> <ProjectForm></ProjectForm> </caption>
 						<thead>
 							<tr> 

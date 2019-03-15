@@ -9,7 +9,13 @@ export default class TaskForm extends React.Component {
 	render = () => {
 		return(
 			<div>
-				Task Form here 
+				<div className="input-group">
+					<span className="fa fa-2x fa-plus"></span>
+				  <input type="text" className="form-control input-new-task" placeholder="Start typing here to create a task" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+				  <div className="input-group-append">
+				    <button className="btn btn-add-task" type="button">Add task</button>
+				  </div>
+				</div>
 			</div>
 		)
 	}

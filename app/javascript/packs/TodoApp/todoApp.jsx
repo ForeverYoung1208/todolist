@@ -47,8 +47,8 @@ export default class TodoApp extends React.Component {
 				<div className="container">
 					<div className="row justify-content-md-center header">
 						<div className="col-md-6">					
-							<h1>Simple toto lists</h1>
-							<h2>From ruby garage</h2>
+							<h4>Simple todo lists</h4>
+							<span>From ruby garage</span>
 						</div>
 					</div>
 
@@ -57,7 +57,9 @@ export default class TodoApp extends React.Component {
 					}
 
 					<div className="row justify-content-md-center header">
-						<button className="btn btn-primary" onClick={this.addProjectClick}><span className="fa fa-plus"></span> Add TODO List</button>
+						<button className="btn btn-primary btn-add-project" onClick={this.addProjectClick}>
+							<div className="fa fa-2x fa-plus blue"></div> <div>Add TODO List</div>
+						</button>
 					</div>
 				</div>
 			</AppContext.Provider>
