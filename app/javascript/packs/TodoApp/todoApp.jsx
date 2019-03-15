@@ -46,7 +46,7 @@ export default class TodoApp extends React.Component {
 			
 				<div className="container">
 					<div className="row justify-content-md-center header">
-						<div className="col-md-6">					
+						<div className="col-md-8">					
 							<h4>Simple todo lists</h4>
 							<span>From ruby garage</span>
 						</div>

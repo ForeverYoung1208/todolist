@@ -15,7 +15,7 @@ export default class Project extends React.Component {
 		const {tasks} = this.props.project
 		return(
 			<div className="row justify-content-md-center">
-				<div className="col-md-6">
+				<div className="col-md-8">
 					<Table className="table_project">
 						<caption align="top"> <ProjectForm></ProjectForm> </caption>
 						<thead>
