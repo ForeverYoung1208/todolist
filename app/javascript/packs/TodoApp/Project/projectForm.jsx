@@ -7,16 +7,27 @@ export default class ProjectForm extends React.Component {
 	}
 
 	render = () => {
+		const {project} = this.props
 		return(
-			<div>
-				Project Form here <span className='fa fa-trash'></span>
+			<div className="project-head flex-row">
+				<div className='fa fa-calendar-alt shadow-blue p-2'></div> 
+				<div> {project.name} </div>
+				<div className="btns-edit-project ml-auto">
+					<div className='fa fa-pen p-2'></div> 
+					|
+					<div className='far fa-trash-alt p-2'></div> 
+				</div>
 			</div>
 		)
 	}
 
 }
 ProjectForm.propTypes={
-
+	project: PropTypes.shape({
+		id: PropTypes.number.isRequired,
+		name: PropTypes.string,
+		tasks: PropTypes.array.isRequired
+	})	
 }
 
 

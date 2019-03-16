@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {AppContext} from '../../todoApp'
 
 export default class Task extends React.Component {
 	constructor(props){
@@ -8,12 +9,19 @@ export default class Task extends React.Component {
 
 	render = () => {
 		const {id, name, priority, deadline, status_id} = this.props.task
+		const {toggleTaskStatus} = this.context
 		return(
-			<tr>
-				<td>status {status_id}</td>
-				<td>{name} (id:{id}), till: {deadline}</td>
-				<td>controls</td>
-			</tr>
+			<AppContext.Consumer>
+				{(fns)=>
+					<tr>
+						<td>
+								<input type="checkbox" className="checkbox-task" checked={status_id == 4} onChange={()=> fns.toggleTaskStatus(id)}/>
+						</td>
+						<td>{name} (id:{id}), till: {deadline}</td>
+						<td>controls</td>
+					</tr>
+				}
+			</AppContext.Consumer>
 		)
 	}
 

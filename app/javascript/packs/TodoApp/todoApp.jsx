@@ -3,9 +3,7 @@ import Project from './Project/project'
 import {fetchJSONfrom} from '../Lib/i-services'
 
 //// should i use Context? idknow... just for fun, maybe...
-const AppContext = React.createContext({
-	statuses:[],
-});
+export const AppContext = React.createContext();
 
 export default class TodoApp extends React.Component {
 	constructor(props){
@@ -24,6 +22,10 @@ export default class TodoApp extends React.Component {
 		console.log( 'mock deleteTask id:'+ taskId)	  
 	}
 
+	toggleTaskStatus = (taskId) => {
+		console.log( 'mock toggleTaskStatus id:'+ taskId)	   
+	}
+
 	componentDidMount= () => {
 		Promise.all([
 			fetchJSONfrom('/statuses.json'),
@@ -40,9 +42,14 @@ export default class TodoApp extends React.Component {
 	}
 
 	render = () => {
-		const {projects, statuses} = this.state
+		const {projects} = this.state
 		return(
-			<AppContext.Provider statuses={statuses} reducers={{deleteTask: this.deleteTask}}>
+			<AppContext.Provider 
+				value={{
+					deleteTask: this.deleteTask,
+					toggleTaskStatus: this.toggleTaskStatus
+				}}
+			>
 			
 				<div className="container">
 					<div className="row justify-content-md-center header">
@@ -58,7 +65,7 @@ export default class TodoApp extends React.Component {
 
 					<div className="row justify-content-md-center header">
 						<button className="btn btn-primary btn-add-project" onClick={this.addProjectClick}>
-							<div className="fa fa-2x fa-plus blue"></div> <div>Add TODO List</div>
+							<div className="fa fa-2x fa-plus shadow-blue"></div> <div>Add TODO List</div>
 						</button>
 					</div>
 				</div>

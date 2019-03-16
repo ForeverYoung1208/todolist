@@ -12,19 +12,19 @@ export default class Project extends React.Component {
 	}
 
 	render = () => {
-		const {tasks} = this.props.project
+		const {project} = this.props
 		return(
 			<div className="row justify-content-md-center">
 				<div className="col-md-8">
-					<Table className="table_project">
-						<caption align="top"> <ProjectForm></ProjectForm> </caption>
+					<Table className="table-project">
+						<caption align="top"> <ProjectForm project={project}></ProjectForm> </caption>
 						<thead>
 							<tr> 
 								<th colSpan="3" > <TaskForm></TaskForm></th>
 							</tr>
 						</thead>
 						<tbody>
-							{ tasks.map(task => 
+							{ project.tasks.map(task => 
 								<Task key={task.id} task={task}></Task> 
 							)}
 						</tbody>

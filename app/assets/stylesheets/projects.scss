@@ -21,30 +21,64 @@ body{
 }
 
 
-.table_project{
+.table-project{
 	box-shadow: 0px 0px 2px #212529;
+	text-shadow: -300px 400px 60px black;
 	caption{
 		caption-side: top;
 		background: linear-gradient(to bottom, #4f7fb9 33%, #4466a5 66%);
 		color: white;
 		font-weight: 500;
-		padding: 10px;
+		padding: 5px;
 		box-shadow: inherit;
 	};
 
 	thead{
 		background: linear-gradient(to bottom, #dcdcdd 33%, #d4d4d4 66%);
 	}
+
+	th{	padding: 5px;	}
+
 	background-color: white;
+	tbody tr{ 
+		border-radius: 0px 0px 12px 12px;		
+		&:hover {
+			background-color: #fcfed5;
+		}
+	}
+
   border-radius: 0px 0px 12px 12px;
   border: none;
 }
 
+.btns-edit-project{
+	color: #95add0;
+	div{
+		&:hover{color: black;};
+	}
+}
+
 .btn-add-project{
+	text-shadow: -400px 500px 60px black;
 	display: inline-flex !important;
 	font-weight: 500 !important;
 	background: linear-gradient(to bottom, #4f7fb9 33%, #4466a5 66%);
 	div:nth-of-type(2){
 		padding-top: 3px;
+		&:hover{color: black;};
 	};
+
+}
+
+.project-head{
+	width: 100%;
+	display: inline-flex !important;
+	font-weight: 500 !important;
+	font-size: 1.2rem;
+	background: linear-gradient(to bottom, #4f7fb9 33%, #4466a5 66%);
+	div:nth-of-type(2){
+		padding-top: 3px;
+		padding-left: 10px;
+	};	
+	
 }
