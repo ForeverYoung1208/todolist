@@ -17,8 +17,24 @@ export default class Task extends React.Component {
 						<td>
 								<input type="checkbox" className="checkbox-task" checked={status_id == 4} onChange={()=> fns.toggleTaskStatus(id)}/>
 						</td>
+						<td className="td-empty"></td>
 						<td>{name} (id:{id}), till: {deadline}</td>
-						<td>controls</td>
+						<td>
+							<div className="task-controls">
+								<div className="arrows">
+									<div className="fa fa-caret-up hoverable"></div>
+									<div className="horizontal-line"></div>
+									<div className="fa fa-caret-down hoverable"></div>
+								</div>
+								<div className="vertical-line m-2"></div>
+								<div className="fa fa-pen m-2 hoverable"></div>
+								<div className="vertical-line m-2"></div>
+								<div className="far fa-trash-alt m-2 hoverable"></div>
+
+								
+							</div>
+
+						</td>
 					</tr>
 				}
 			</AppContext.Consumer>

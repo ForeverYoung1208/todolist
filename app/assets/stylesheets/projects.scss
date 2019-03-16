@@ -14,7 +14,11 @@ body{
 		font-weight: 500;
 		margin:0px;
 		padding: 30px;
+		text-shadow: -400px 500px 60px black;
+
 		h4{
+			text-shadow: 400px 500px 60px black;
+
 			margin:0px;
 		}
 	}
@@ -22,8 +26,13 @@ body{
 
 
 .table-project{
+
 	box-shadow: 0px 0px 2px #212529;
-	text-shadow: -300px 400px 60px black;
+/*	text-shadow: -300px 400px 60px black;*/
+  border-radius: 0px 0px 12px 12px;
+  border: none;
+	overflow: hidden;
+
 	caption{
 		caption-side: top;
 		background: linear-gradient(to bottom, #4f7fb9 33%, #4466a5 66%);
@@ -31,6 +40,7 @@ body{
 		font-weight: 500;
 		padding: 5px;
 		box-shadow: inherit;
+
 	};
 
 	thead{
@@ -45,10 +55,14 @@ body{
 		&:hover {
 			background-color: #fcfed5;
 		}
+		td{
+			border: solid 1px #d4d4d46b;			
+		}
 	}
-
-  border-radius: 0px 0px 12px 12px;
-  border: none;
+	.td-empty{
+		width: 5px;
+		padding: 0px;
+	}
 }
 
 .btns-edit-project{

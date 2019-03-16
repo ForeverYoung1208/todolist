@@ -38,5 +38,42 @@
 .checkbox-task{
   transform: scale(1.3);
 	background: linear-gradient(to bottom, #8cc3a6 40%, #598c70 60%);
-
 }
+
+.task-controls{
+	color: #8e8e94;
+	display: inline-flex;
+
+	.arrows{
+		margin-right: 5px;
+		margin-left: 8px;
+	}
+
+	.horizontal-line{
+	    width: 10px;
+	    margin: -3px 0px 0px -1px !important;
+	    border: solid;
+	    border-color: #8e8e94;
+	    border-width: 1px;
+	}
+	.fa-caret-down{
+	    margin-top: -1px !important;
+	    display: block;
+	}
+	.vertical-line{
+	    width: 1px;
+	    height: 15px;
+	    border: solid;
+	    border-color: #8e8e94;
+	    border-width: 0.5px;
+	}	
+	.hoverable
+	{
+    &:hover{ color: black; };		
+	}
+/*	div{
+		margin: 0px 4px 0px 4px;
+	}
+*/
+}
+
