@@ -43,7 +43,3 @@ Project.propTypes={
 		tasks: PropTypes.array.isRequired
 	})
 }
-
-
-// onMouseEnter={this.hoverOn} 
-// onMouseLeave={this.hoverOff}

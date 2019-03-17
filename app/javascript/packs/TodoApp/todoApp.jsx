@@ -1,6 +1,7 @@
 import React from 'react'
 import Project from './Project/project'
 import {fetchJSONfrom} from '../Lib/i-services'
+import {postDataAsJSON} from '../Lib/i-services'
 
 //// should i use Context? idknow... just for fun, maybe...
 export const AppContext = React.createContext();
@@ -8,14 +9,44 @@ export const AppContext = React.createContext();
 export default class TodoApp extends React.Component {
 	constructor(props){
 		super(props)
+		this.lastProjectId = 0;
+		this.lastTaskId = 0;
+
 		this.state={
 			projects:[],
 			statuses:[],
 		}
 	}
 
-	addProjectClick= () => {
-	  console.log( 'mock addProjectClick')
+	newId = ()=>{
+		return {
+			project: this.lastProjectId-=1 ,
+			task: this.lastTaskId-=1
+		}
+	}
+
+	addProjectClick = () => {
+		const emptyProject={
+			name: 'new project',
+		}
+		postDataAsJSON ('/projects.json','POST',emptyProject,		
+			(res)=>{
+				if(res.ok){
+					res.json().then( resProject=>
+						this.setState({
+							projects:[...this.state.projects, resProject]
+						})
+					)
+				}else{
+					console.log('request error: '+res.status+ '-'+res.statusText)
+				}
+			},
+			(e)=>console.log('error: '+e)
+		)
+	}
+
+	deleteProject = () =>{
+		
 	}
 
 	deleteTask = (taskId) => {
