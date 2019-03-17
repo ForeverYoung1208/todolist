@@ -45,6 +45,33 @@ export default class TodoApp extends React.Component {
 		)
 	}
 
+// TODO UNDER CONSTRUCTION
+	addTaskClick = (task_name, project_id) => {
+		const emptyTask={
+			name: task_name,
+			project_id: project_id
+		}
+		postDataAsJSON ('/tasks.json','POST',emptyTask,		
+			(res)=>{
+				if(res.ok){
+					res.json().then( 
+						(resTask)=>{
+							const projectIndex = this.state.projects.findIndex(p=> p.id==project_id)
+							const newProjects = this.state.projects[projectIndex].tasks.push()
+							this.setState({
+								projects:[...this.state.projects, resProject]
+							})
+						}
+					)
+				}else{
+					console.log('request error: '+res.status+ '-'+res.statusText)
+				}
+			},
+			(e)=>console.log('error: '+e)
+		)
+	}
+// TODO UNDER CONSTRUCTION
+
 	deleteProject = () =>{
 
 	}
