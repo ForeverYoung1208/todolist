@@ -46,7 +46,7 @@ export default class TodoApp extends React.Component {
 	}
 
 	deleteProject = () =>{
-		
+
 	}
 
 	deleteTask = (taskId) => {
@@ -99,6 +99,7 @@ export default class TodoApp extends React.Component {
 							<div className="fa fa-2x fa-plus shadow-blue"></div> <div>Add TODO List</div>
 						</button>
 					</div>
+					<footer> Test task for Ruby Garage by Ihor</footer>
 				</div>
 			</AppContext.Provider>
 		)

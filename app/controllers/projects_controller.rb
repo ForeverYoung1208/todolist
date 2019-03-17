@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   end
   
   def index
-    @projects = Project.all
+    @projects = Project.permitted_for(current_user.id)
   end
 
   # GET /projects/1
@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
-    @project.user_id = 1
+    @project.user_id = current_user.id
 
 
     respond_to do |format|

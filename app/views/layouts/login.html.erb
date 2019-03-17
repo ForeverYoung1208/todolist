@@ -10,7 +10,14 @@
     <%= favicon_link_tag 'favicon.ico' %>    
   </head>
 
-  <body class="application-body" >
-    <%= yield %>
+  <body>
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div class="col-md-8">
+          <%= yield %>      
+        </div>
+      </div>
+    </div>
+    
   </body>
 </html>
