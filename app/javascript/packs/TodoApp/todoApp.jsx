@@ -15,6 +15,14 @@ export default class TodoApp extends React.Component {
 		this.state={
 			projects:[],
 			statuses:[],
+			fun:{
+				deleteTask: this.deleteTask,
+				toggleTaskStatus: this.toggleTaskStatus,
+				upTask: this.upTask,
+				downTask: this.downTask,
+				editTask: this.editTask,				
+				addTask: this.addTask,
+			}
 		}
 	}
 
@@ -23,6 +31,10 @@ export default class TodoApp extends React.Component {
 			project: this.lastProjectId-=1 ,
 			task: this.lastTaskId-=1
 		}
+	}
+
+	deleteProject = (project_id) =>{
+		console.log( 'mock deleteProject project_id:'+project_id )	  
 	}
 
 	addProjectClick = () => {
@@ -45,8 +57,8 @@ export default class TodoApp extends React.Component {
 		)
 	}
 
-// TODO UNDER CONSTRUCTION
-	addTaskClick = (task_name, project_id) => {
+// UNDER CONSTRUCTION
+	_addTask = (project_id, task_name) => {
 		const emptyTask={
 			name: task_name,
 			project_id: project_id
@@ -57,9 +69,10 @@ export default class TodoApp extends React.Component {
 					res.json().then( 
 						(resTask)=>{
 							const projectIndex = this.state.projects.findIndex(p=> p.id==project_id)
-							const newProjects = this.state.projects[projectIndex].tasks.push()
+							const newProjects = this.state.projects[projectIndex].tasks
+							console.log( newProjects)
 							this.setState({
-								projects:[...this.state.projects, resProject]
+								projects:newProjects
 							})
 						}
 					)
@@ -70,10 +83,21 @@ export default class TodoApp extends React.Component {
 			(e)=>console.log('error: '+e)
 		)
 	}
-// TODO UNDER CONSTRUCTION
 
-	deleteProject = () =>{
+	upTask= (task_id) => {
+		console.log( 'mock upTask task_id:'+ task_id)	  
+	}
 
+	editTask= (task_id) => {
+		console.log( 'mock editTask task_id:'+ task_id)	  
+	}
+
+	downTask= (task_id) => {
+		console.log( 'mock downTask task_id:'+ task_id)	  
+	}
+
+	addTask= (project_id, newName) => {
+		console.log( 'mock addTask project_id:'+project_id + ' ' + newName)	  
 	}
 
 	deleteTask = (taskId) => {
@@ -103,10 +127,7 @@ export default class TodoApp extends React.Component {
 		const {projects} = this.state
 		return(
 			<AppContext.Provider 
-				value={{
-					deleteTask: this.deleteTask,
-					toggleTaskStatus: this.toggleTaskStatus
-				}}
+				value={this.state.fun}
 			>
 			
 				<div className="container">

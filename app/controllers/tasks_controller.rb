@@ -26,6 +26,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.user_id = current_user.id
+    @task.status_id = 1
 
     respond_to do |format|
       if @task.save

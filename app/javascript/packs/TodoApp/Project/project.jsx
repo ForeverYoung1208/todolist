@@ -20,7 +20,7 @@ export default class Project extends React.Component {
 						<caption align="top"> <ProjectForm project={project}></ProjectForm> </caption>
 						<thead>
 							<tr> 
-								<th colSpan="4" > <TaskForm></TaskForm></th>
+								<th colSpan="4" > <TaskForm project={project}></TaskForm></th>
 							</tr>
 						</thead>
 						<tbody>

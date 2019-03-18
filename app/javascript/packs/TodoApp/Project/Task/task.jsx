@@ -12,30 +12,33 @@ export default class Task extends React.Component {
 
 	render = () => {
 		const {id, name, priority, deadline, status_id} = this.props.task
-		const {toggleTaskStatus} = this.context
-		const taskControls = <div className="task-controls">
-								<div className="arrows">
-									<div className="fa fa-caret-up hoverable"></div>
-									<div className="horizontal-line"></div>
-									<div className="fa fa-caret-down hoverable"></div>
-								</div>
-								<div className="vertical-line m-2"></div>
-								<div className="fa fa-pen m-2 hoverable"></div>
-								<div className="vertical-line m-2"></div>
-								<div className="far fa-trash-alt m-2 hoverable"></div>
-		</div>
+		const taskControls = <AppContext.Consumer>
+			{(fun)=><div className="task-controls">
+									<div className="arrows">
+										<div className="fa fa-caret-up hoverable" onClick={()=>fun.upTask(id)}></div>
+										<div className="horizontal-line"></div>
+										<div className="fa fa-caret-down hoverable" onClick={()=>fun.downTask(id)}></div>
+									</div>
+									<div className="vertical-line m-2"></div>
+									<div className="fa fa-pen m-2 hoverable" onClick={()=>fun.editTask(id)}></div>
+									<div className="vertical-line m-2"></div>
+									<div className="far fa-trash-alt m-2 hoverable" onClick={()=>fun.deleteTask(id)}></div>
+							</div>
+			}
+		</AppContext.Consumer>
+
 		const noTaskControls = <div className="no-task-controls"></div>
 
 
 		return(
 			<AppContext.Consumer>
-				{(fns)=>
+				{(fun)=>
 					<tr
 						onMouseEnter={e=> this.setState({hovered:true})}
 						onMouseLeave={e=> this.setState({hovered:false})}
 					>
 						<td>
-								<input type="checkbox" className="checkbox-task" checked={status_id == 4} onChange={()=> fns.toggleTaskStatus(id)}/>
+								<input type="checkbox" className="checkbox-task" checked={status_id == 4} onChange={()=> fun.toggleTaskStatus(id)}/>
 						</td>
 						<td className="td-empty"></td>
 						<td>{name} (id:{id}), till: {deadline}</td>
