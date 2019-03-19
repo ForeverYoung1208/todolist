@@ -58,7 +58,7 @@ export default class TodoApp extends React.Component {
 	}
 
 // UNDER CONSTRUCTION
-	_addTask = (project_id, task_name) => {
+	addTask = (project_id, task_name) => {
 		const emptyTask={
 			name: task_name,
 			project_id: project_id
@@ -69,7 +69,8 @@ export default class TodoApp extends React.Component {
 					res.json().then( 
 						(resTask)=>{
 							const projectIndex = this.state.projects.findIndex(p=> p.id==project_id)
-							const newProjects = this.state.projects[projectIndex].tasks
+							const newProjects = this.state.projects
+							newProjects[projectIndex].tasks.push(resTask)
 							console.log( newProjects)
 							this.setState({
 								projects:newProjects
@@ -96,7 +97,7 @@ export default class TodoApp extends React.Component {
 		console.log( 'mock downTask task_id:'+ task_id)	  
 	}
 
-	addTask= (project_id, newName) => {
+	_addTask= (project_id, newName) => {
 		console.log( 'mock addTask project_id:'+project_id + ' ' + newName)	  
 	}
 

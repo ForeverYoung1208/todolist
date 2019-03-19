@@ -37,7 +37,7 @@ export default class Task extends React.Component {
 						onMouseEnter={e=> this.setState({hovered:true})}
 						onMouseLeave={e=> this.setState({hovered:false})}
 					>
-						<td>
+						<td className="td-status">
 								<input type="checkbox" className="checkbox-task" checked={status_id == 4} onChange={()=> fun.toggleTaskStatus(id)}/>
 						</td>
 						<td className="td-empty"></td>
