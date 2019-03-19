@@ -1,7 +1,7 @@
 import React from 'react'
 import Project from './Project/project'
 import {fetchJSONfrom} from '../Lib/i-services'
-import {postDataAsJSON} from '../Lib/i-services'
+import {postDataAsJSON, ipost} from '../Lib/i-services'
 
 //// should i use Context? idknow... just for fun, maybe...
 export const AppContext = React.createContext();
@@ -41,19 +41,12 @@ export default class TodoApp extends React.Component {
 		const emptyProject={
 			name: 'new project',
 		}
-		postDataAsJSON ('/projects.json','POST',emptyProject,		
-			(res)=>{
-				if(res.ok){
-					res.json().then( resProject=>
-						this.setState({
-							projects:[...this.state.projects, resProject]
-						})
-					)
-				}else{
-					console.log('request error: '+res.status+ '-'+res.statusText)
-				}
-			},
-			(e)=>console.log('error: '+e)
+		ipost('/projects.json','POST',emptyProject,		
+			(resProject)=>{
+				this.setState({
+					projects:[...this.state.projects, resProject]
+				})
+			}
 		)
 	}
 
@@ -62,25 +55,16 @@ export default class TodoApp extends React.Component {
 			name: task_name,
 			project_id: project_id
 		}
-		postDataAsJSON ('/tasks.json','POST',emptyTask,		
-			(res)=>{
-				if(res.ok){
-					res.json().then( 
-						(resTask)=>{
-							const projectIndex = this.state.projects.findIndex(p=> p.id==project_id)
-							const newProjects = this.state.projects
-							newProjects[projectIndex].tasks.push(resTask)
-							console.log( newProjects)
-							this.setState({
-								projects:newProjects
-							})
-						}
-					)
-				}else{
-					console.log('request error: '+res.status+ '-'+res.statusText)
-				}
-			},
-			(e)=>console.log('error: '+e)
+		ipost('/tasks.json','POST',emptyTask,		
+			(resTask)=>{
+				const projectIndex = this.state.projects.findIndex(p=> p.id==project_id)
+				const newProjects = this.state.projects
+				newProjects[projectIndex].tasks.push(resTask)
+				console.log( newProjects)
+				this.setState({
+					projects:newProjects
+				})
+			}
 		)
 	}
 
@@ -96,9 +80,6 @@ export default class TodoApp extends React.Component {
 		console.log( 'mock downTask task_id:'+ task_id)	  
 	}
 
-	_addTask= (project_id, newName) => {
-		console.log( 'mock addTask project_id:'+project_id + ' ' + newName)	  
-	}
 
 	deleteTask = (taskId) => {
 		console.log( 'mock deleteTask id:'+ taskId)	  
@@ -154,7 +135,3 @@ export default class TodoApp extends React.Component {
 	}
 
 }
-
-
-// onMouseEnter={this.hoverOn} 
-// onMouseLeave={this.hoverOff}
