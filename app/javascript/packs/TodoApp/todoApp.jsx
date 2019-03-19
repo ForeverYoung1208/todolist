@@ -16,6 +16,7 @@ export default class TodoApp extends React.Component {
 			projects:[],
 			statuses:[],
 			fun:{
+				deleteProject: this.deleteProject,
 				deleteTask: this.deleteTask,
 				toggleTaskStatus: this.toggleTaskStatus,
 				upTask: this.upTask,
@@ -33,8 +34,14 @@ export default class TodoApp extends React.Component {
 		}
 	}
 
-	deleteProject = (project_id) =>{
-		console.log( 'mock deleteProject project_id:'+project_id )	  
+	deleteProject = (projectId) =>{
+		ipost(`/projects/${projectId}.json`,'DELETE',null,
+			(resProjects)=>{
+				this.setState({
+					projects: resProjects
+				})
+			}
+		)
 	}
 
 	addProjectClick = () => {
@@ -82,7 +89,13 @@ export default class TodoApp extends React.Component {
 
 
 	deleteTask = (taskId) => {
-		console.log( 'mock deleteTask id:'+ taskId)	  
+		ipost(`/tasks/${taskId}.json`,'DELETE',null,
+			(resProject)=>{
+				this.setState({
+					projects: this.state.projects.map(p => p.id == resProject.id ? resProject : p )
+				})
+			}
+		)
 	}
 
 	toggleTaskStatus = (taskId) => {

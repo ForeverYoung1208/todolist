@@ -27,7 +27,7 @@ export const postDataAsJSON = (url,method,data,okCBK,errCBK) => {
 }
 
 
-export const ipost = (url,method,data,okCBK,errCBK) => {
+export const ipost = (url,method,data,okCBK) => {
 	const token = $('meta[name="csrf-token"]').attr('content');	
 	return fetch(url,
 		{	method: method,
@@ -47,7 +47,7 @@ export const ipost = (url,method,data,okCBK,errCBK) => {
 				}else{
 					console.log('request error: '+res.status+ '-'+res.statusText)
 				}}
-	).catch ((error) => errCBK(error))
+	).catch ((error) => console.log('error: ' + error))
 }
 
 

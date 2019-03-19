@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :user
-  has_many :tasks
+  has_many :tasks, dependent: :destroy
 
   def self.permitted_for(user_id)
   	where("user_id=?",user_id)

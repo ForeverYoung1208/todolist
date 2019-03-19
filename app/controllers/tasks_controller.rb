@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all.order("priority DESC")
+    @tasks = Task.all.order("priority ASC")
   end
 
   # GET /tasks/1
@@ -62,7 +62,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
       # format.json { head :no_content }
-      format.json {render json: project, partial: 'project.json'}
+      format.json {render partial: 'projects/project.json', locals:{project: project}}
     end
   end
 
