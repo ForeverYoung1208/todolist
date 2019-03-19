@@ -57,7 +57,6 @@ export default class TodoApp extends React.Component {
 		)
 	}
 
-// UNDER CONSTRUCTION
 	addTask = (project_id, task_name) => {
 		const emptyTask={
 			name: task_name,

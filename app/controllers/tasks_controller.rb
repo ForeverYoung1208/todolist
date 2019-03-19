@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.all.order("priority DESC")
   end
 
   # GET /tasks/1
@@ -27,6 +27,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.user_id = current_user.id
     @task.status_id = ::STATUS_ID_START
+    @task.priority = Task.maximum(:priority)+1
 
     respond_to do |format|
       if @task.save
@@ -56,10 +57,12 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
+    project = @task.project
     @task.destroy
     respond_to do |format|
       format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
-      format.json { head :no_content }
+      # format.json { head :no_content }
+      format.json {render json: project, partial: 'project.json'}
     end
   end
 
