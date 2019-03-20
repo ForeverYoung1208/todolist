@@ -12,6 +12,7 @@ export default class Task extends React.Component {
 
 	render = () => {
 		const {id, name, priority, deadline, status_id} = this.props.task
+		const {projectIndex, taskIndex} = this.props
 		const taskControls = <AppContext.Consumer>
 			{(fun)=><div className="task-controls">
 									<div className="arrows">
@@ -29,7 +30,6 @@ export default class Task extends React.Component {
 
 		const noTaskControls = <div className="no-task-controls"></div>
 
-
 		return(
 			<AppContext.Consumer>
 				{(fun)=>
@@ -38,7 +38,7 @@ export default class Task extends React.Component {
 						onMouseLeave={e=> this.setState({hovered:false})}
 					>
 						<td className="td-status">
-								<input type="checkbox" className="checkbox-task" checked={status_id == 4} onChange={()=> fun.toggleTaskStatus(id)}/>
+								<input type="checkbox" className="checkbox-task" checked={status_id == 4} onChange={()=> fun.toggleTaskStatus(id)} />
 						</td>
 						<td className="td-empty"></td>
 						<td>{name} (id:{id}), till: {deadline}</td>
@@ -57,8 +57,9 @@ Task.propTypes={
 		priority: PropTypes.number, 
 		deadline: PropTypes.string, 
 		status_id: PropTypes.number,		
-	})
-
+	}).isRequired,
+	projectIndex: PropTypes.number.isRequired,
+	taskIndex: PropTypes.number.isRequired
 }
 
 

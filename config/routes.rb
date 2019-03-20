@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :tasks
+  resources :tasks do
+  	post 'toggleStatus', to: 'tasks#toggle_status'
+  end
   resources :statuses
   devise_for :users
   resources :projects

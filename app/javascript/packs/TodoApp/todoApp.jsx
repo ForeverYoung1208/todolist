@@ -99,7 +99,13 @@ export default class TodoApp extends React.Component {
 	}
 
 	toggleTaskStatus = (taskId) => {
-		console.log( 'mock toggleTaskStatus id:'+ taskId)	   
+		ipost(`/tasks/${taskId}/toggleStatus`,'POST',null,
+			(resProject)=>{
+				this.setState({
+					projects: this.state.projects.map(p => p.id == resProject.id ? resProject : p )
+				})
+			}
+		)
 	}
 
 	componentDidMount= () => {
@@ -132,8 +138,8 @@ export default class TodoApp extends React.Component {
 						</div>
 					</div>
 
-					{projects.map( prj => 
-						<Project key={prj.id} project={prj}></Project> )
+					{projects.map( (prj, projectIndex) => 
+						<Project key={prj.id} project={prj} projectIndex={projectIndex}></Project> )
 					}
 
 					<div className="row justify-content-md-center header">

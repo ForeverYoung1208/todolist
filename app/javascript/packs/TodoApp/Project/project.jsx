@@ -12,7 +12,7 @@ export default class Project extends React.Component {
 	}
 
 	render = () => {
-		const {project} = this.props
+		const {project, projectIndex} = this.props
 		return(
 			<div className="row justify-content-md-center">
 				<div className="col-md-8">
@@ -24,8 +24,8 @@ export default class Project extends React.Component {
 							</tr>
 						</thead>
 						<tbody>
-							{ project.tasks.map(task => 
-								<Task key={task.id} task={task}></Task> 
+							{ project.tasks.map((task,taskIndex) => 
+								<Task key={task.id} task={task} taskIndex={taskIndex} projectIndex={projectIndex}></Task> 
 							)}
 						</tbody>
 					</Table>
@@ -41,5 +41,6 @@ Project.propTypes={
 		id: PropTypes.number.isRequired,
 		name: PropTypes.string,
 		tasks: PropTypes.array.isRequired
-	})
+	}),
+	projectIndex: PropTypes.number.isRequired
 }

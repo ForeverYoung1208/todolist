@@ -40,6 +40,17 @@ class TasksController < ApplicationController
     end
   end
 
+  # POST /tasks/1/toggleStatus
+  def toggle_status
+    @task = Task.find(params[:task_id])
+    project = @task.project
+    respond_to do |format|
+      if @task.toggle_status
+        format.json {render partial: 'projects/project.json', locals:{project: project}}
+      end
+    end
+  end
+
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update

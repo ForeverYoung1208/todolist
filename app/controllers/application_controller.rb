@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   layout :layout
 
   ::STATUS_ID_START = 1
+  ::STATUS_ID_END = 4
 
   private
 
