@@ -16,9 +16,9 @@ export default class Task extends React.Component {
 		const taskControls = <AppContext.Consumer>
 			{(fun)=><div className="task-controls">
 									<div className="arrows">
-										<div className="fa fa-caret-up hoverable" onClick={()=>fun.upTask(id)}></div>
+										<div className="fa fa-caret-up hoverable" onClick={()=>fun.shiftTask(projectIndex, taskIndex, -1)}></div>
 										<div className="horizontal-line"></div>
-										<div className="fa fa-caret-down hoverable" onClick={()=>fun.downTask(id)}></div>
+										<div className="fa fa-caret-down hoverable" onClick={()=>fun.shiftTask(projectIndex, taskIndex, 1)}></div>
 									</div>
 									<div className="vertical-line m-2"></div>
 									<div className="fa fa-pen m-2 hoverable" onClick={()=>fun.editTask(id)}></div>

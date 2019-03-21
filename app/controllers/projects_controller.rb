@@ -67,6 +67,14 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def change_task_priorities
+    @project = Project.find(params[:project_id])
+    @project.change_task_priorities(params[:task1_id], params[:task2_id])
+    respond_to do |format|
+      format.json {render partial: 'project.json', locals:{project: @project}}
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
@@ -75,6 +83,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :user_id)
+      params.require(:project).permit(:project_id, :name, :user_id, :task1_id, :task2_id)
     end
 end

@@ -19,8 +19,7 @@ export default class TodoApp extends React.Component {
 				deleteProject: this.deleteProject,
 				deleteTask: this.deleteTask,
 				toggleTaskStatus: this.toggleTaskStatus,
-				upTask: this.upTask,
-				downTask: this.downTask,
+				shiftTask: this.shiftTask,
 				editTask: this.editTask,				
 				addTask: this.addTask,
 			}
@@ -67,7 +66,6 @@ export default class TodoApp extends React.Component {
 				const projectIndex = this.state.projects.findIndex(p=> p.id==project_id)
 				const newProjects = this.state.projects
 				newProjects[projectIndex].tasks.push(resTask)
-				console.log( newProjects)
 				this.setState({
 					projects:newProjects
 				})
@@ -75,17 +73,31 @@ export default class TodoApp extends React.Component {
 		)
 	}
 
-	upTask= (task_id) => {
-		console.log( 'mock upTask task_id:'+ task_id)	  
+	shiftTask= (projectIndex, taskIndex, shift=-1) => {
+		const project = this.state.projects[projectIndex]
+		const maxTaskIndex = project.tasks.length-1
+		if ( (taskIndex+shift >= 0) && (taskIndex+shift <= maxTaskIndex) ){
+			const tasksToChange = {
+				task1_id: project.tasks[taskIndex].id,
+				task2_id: project.tasks[taskIndex+shift].id
+			}
+			ipost(`/projects/${project.id}/changeTaskPriorities`,'POST',tasksToChange,
+				(resProject)=>{
+					this.setState({
+						projects: this.state.projects.map(p => p.id == resProject.id ? resProject : p )
+					})
+				}
+			)			
+		} else {
+
+		}
+		
 	}
 
 	editTask= (task_id) => {
 		console.log( 'mock editTask task_id:'+ task_id)	  
 	}
 
-	downTask= (task_id) => {
-		console.log( 'mock downTask task_id:'+ task_id)	  
-	}
 
 
 	deleteTask = (taskId) => {

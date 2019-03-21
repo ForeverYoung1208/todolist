@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   end
   resources :statuses
   devise_for :users
-  resources :projects
+  resources :projects do
+  	post 'changeTaskPriorities', to: 'projects#change_task_priorities'
+  end
+
 
   root to: "projects#app"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
