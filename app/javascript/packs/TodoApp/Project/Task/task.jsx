@@ -1,18 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {AppContext} from '../../todoApp'
+// import TaskShowOrEdit from './taskShowOrEdit'
 
 export default class Task extends React.Component {
 	constructor(props){
 		super(props)
 		this.state = {
 			hovered: false,
+			isEditting: false,
 		}
 	}
 
 	render = () => {
 		const {id, name, priority, deadline, status_id} = this.props.task
 		const {projectIndex, taskIndex} = this.props
+		const {isEditting} = this.state
 		const taskControls = <AppContext.Consumer>
 			{(fun)=><div className="task-controls">
 									<div className="arrows">
@@ -21,7 +24,7 @@ export default class Task extends React.Component {
 										<div className="fa fa-caret-down hoverable" onClick={()=>fun.shiftTask(projectIndex, taskIndex, 1)}></div>
 									</div>
 									<div className="vertical-line m-2"></div>
-									<div className="fa fa-pen m-2 hoverable" onClick={()=>fun.editTask(id)}></div>
+									<div className="fa fa-pen m-2 hoverable" onClick={()=>this.setState({isEditting: true})}></div>
 									<div className="vertical-line m-2"></div>
 									<div className="far fa-trash-alt m-2 hoverable" onClick={()=>fun.deleteTask(id)}></div>
 							</div>
@@ -41,8 +44,21 @@ export default class Task extends React.Component {
 								<input type="checkbox" className="checkbox-task" checked={status_id == 4} onChange={()=> fun.toggleTaskStatus(id)} />
 						</td>
 						<td className="td-empty"></td>
-						<td>{name} (id:{id}), till: {deadline}</td>
+						
+						<td> 
+						{
+						isEditting
+						? <div>
+								<input value={this.state.val} onChange={(e) => this.setState({val: e.target.value})}/>
+								<button onClick={()=>fun.onEditTaskOk()}>Ok</button>
+							</div>
+						: <div>{name} (id: {id}); deadline:{deadline}</div>
+						}
+
+						</td>
+
 						<td className="td-task-controls">{this.state.hovered ? taskControls : noTaskControls }</td>
+
 					</tr>
 				}
 			</AppContext.Consumer>

@@ -2,7 +2,6 @@ import React from 'react'
 import Project from './Project/project'
 import {fetchJSONfrom} from '../Lib/i-services'
 import {postDataAsJSON, ipost} from '../Lib/i-services'
-import TaskEditForm from './Project/Task/taskEditForm'
 
 //// should i use Context? idknow... just for fun, maybe...
 export const AppContext = React.createContext();
@@ -16,13 +15,16 @@ export default class TodoApp extends React.Component {
 		this.state={
 			projects:[],
 			statuses:[],
+			taskEdittingIds: [],
 			fun:{
 				deleteProject: this.deleteProject,
 				deleteTask: this.deleteTask,
+				addTask: this.addTask,
 				toggleTaskStatus: this.toggleTaskStatus,
 				shiftTask: this.shiftTask,
-				editTask: this.editTask,				
-				addTask: this.addTask,
+				// editTask: this.editTask,
+				onEditTaskOk: this.onTaskEditOk,
+				onEditTaskCancel: this.onTaskEditCancel
 			}
 		}
 	}
@@ -95,8 +97,15 @@ export default class TodoApp extends React.Component {
 		
 	}
 
-	editTask= (task_id) => {
-		console.log( 'mock editTask task_id:'+ task_id)	  
+	onTaskEditOk = (projectIndex, taskIndex) => {
+		console.log("ok: " + projectIndex + taskIndex)
+	}
+	onTaskEditCancel = (projectIndex, taskIndex) => {
+		console.log("cancel: " + projectIndex + taskIndex)
+	}
+
+	editTask= (projectIndex, taskIndex) => {
+		
 	}
 
 
@@ -139,7 +148,8 @@ export default class TodoApp extends React.Component {
 
 	render = () => {
 		const {projects} = this.state
-		
+
+	
 		
 		return(
 			<AppContext.Provider 
@@ -147,6 +157,7 @@ export default class TodoApp extends React.Component {
 			>
 			
 				<div className="container">
+
 					<div className="row justify-content-md-center header">
 						<div className="col-md-8">					
 							<h4>Simple todo lists</h4>
