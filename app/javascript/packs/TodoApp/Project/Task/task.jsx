@@ -17,9 +17,7 @@ export default class Task extends React.Component {
 	}
 
 	componentDidMount= () => {
-	 //  $('.datepicker').datepicker({
-	 //    autoclose: true
-		// })
+
 	}
 
 

@@ -17,7 +17,7 @@ export default class Project extends React.Component {
 			<div className="row justify-content-md-center">
 				<div className="col-md-8">
 					<Table className="table-project">
-						<caption align="top"> <ProjectForm project={project}></ProjectForm> </caption>
+						<caption align="top"> <ProjectForm project={project} projectIndex={projectIndex}></ProjectForm> </caption>
 						<thead>
 							<tr> 
 								<th colSpan="4" > <TaskForm project={project}></TaskForm></th>

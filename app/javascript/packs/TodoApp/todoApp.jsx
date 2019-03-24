@@ -23,6 +23,7 @@ export default class TodoApp extends React.Component {
 				toggleTaskStatus: this.toggleTaskStatus,
 				shiftTask: this.shiftTask,
 				onTaskEditOk: this.onTaskEditOk,
+				onProjectEditOk: this.onProjectEditOk
 			}
 		}
 	}
@@ -52,6 +53,19 @@ export default class TodoApp extends React.Component {
 			(resProject)=>{
 				this.setState({
 					projects:[...this.state.projects, resProject]
+				})
+			}
+		)
+	}
+	onProjectEditOk= (projectIndex, name) => {
+		let newProject = this.state.projects[projectIndex]
+		newProject.name = name
+		ipost(`/projects/${newProject.id}.json`,'PUT',newProject,		
+			(resProject)=>{
+				let newProjects = this.state.projects
+				newProjects[projectIndex] = resProject
+				this.setState({
+					projects:newProjects,
 				})
 			}
 		)
