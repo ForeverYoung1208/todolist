@@ -44,7 +44,9 @@ gem 'webpacker'
 gem 'font-awesome-sass'
 gem 'devise'
 gem 'jquery-rails'
+# gem 'jquery-ui-rails'
 gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-datepicker-rails'
 
 # interesting datetime picker 
 # https://eonasdan.github.io/bootstrap-datetimepicker/Installing/

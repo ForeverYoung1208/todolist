@@ -5,7 +5,7 @@ json.tasks project.permitted_tasks(current_user.id).order('priority ASC').collec
 	id: t.id, 
 	name: t.name,
 	priority:t.priority, 
-	deadline: t.deadline, 
+	deadline: t.deadline.try(:strftime, "%Y-%m-%d" ), 
 	status_id:t.status_id
 }}
 

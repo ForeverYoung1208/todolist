@@ -22,9 +22,7 @@ export default class TodoApp extends React.Component {
 				addTask: this.addTask,
 				toggleTaskStatus: this.toggleTaskStatus,
 				shiftTask: this.shiftTask,
-				// editTask: this.editTask,
-				onEditTaskOk: this.onTaskEditOk,
-				onEditTaskCancel: this.onTaskEditCancel
+				onTaskEditOk: this.onTaskEditOk,
 			}
 		}
 	}
@@ -97,17 +95,20 @@ export default class TodoApp extends React.Component {
 		
 	}
 
-	onTaskEditOk = (projectIndex, taskIndex) => {
-		console.log("ok: " + projectIndex + taskIndex)
+	onTaskEditOk = (projectIndex, taskIndex, value, deadline) => {
+		let newTask = this.state.projects[projectIndex].tasks[taskIndex]
+		newTask={...newTask, name: value, deadline: deadline}
+		ipost(`/tasks/${newTask.id}.json`,'PUT',newTask,		
+			(resProject)=>{
+				const projectIndex = this.state.projects.findIndex(p=> p.id==resProject.id)
+				const newProjects = this.state.projects
+				newProjects[projectIndex] = resProject
+				this.setState({
+					projects:newProjects
+				})
+			}
+		)
 	}
-	onTaskEditCancel = (projectIndex, taskIndex) => {
-		console.log("cancel: " + projectIndex + taskIndex)
-	}
-
-	editTask= (projectIndex, taskIndex) => {
-		
-	}
-
 
 
 	deleteTask = (taskId) => {
