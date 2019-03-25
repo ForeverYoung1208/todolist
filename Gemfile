@@ -46,8 +46,8 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'jquery-rails'
 # gem 'jquery-ui-rails'
-gem 'bootstrap', '~> 4.3.1'
-# gem 'bootstrap', '~> 4.0.0.alpha3'
+# gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'bootstrap-datepicker-rails'
 
 # interesting datetime picker 
