@@ -42,9 +42,9 @@ export default class Task extends React.Component {
 										<div className="fa fa-caret-down hoverable" onClick={()=>fun.shiftTask(projectIndex, taskIndex, 1)}></div>
 									</div>
 									<div className="vertical-line m-2"></div>
-									<div className="fa fa-pen m-2 hoverable" onClick={this.startEditting}></div>
+									<div className="fa fa-edit m-2 hoverable" onClick={this.startEditting}></div>
 									<div className="vertical-line m-2"></div>
-									<div className="far fa-trash-alt m-2 hoverable" onClick={()=>fun.deleteTask(id)}></div>
+									<div className="fa fa-trash m-2 hoverable" onClick={()=>fun.deleteTask(id)}></div>
 							</div>
 			}
 		</AppContext.Consumer>

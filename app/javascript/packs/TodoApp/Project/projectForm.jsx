@@ -20,9 +20,9 @@ export default class ProjectForm extends React.Component {
 
 		const btnsEditProject = <AppContext.Consumer>
 			{(fun)=><div className="btns-edit-project ml-auto">
-					<div className='fa fa-pen p-2' onClick={()=>this.setState(ps=>({isEditting: !ps.isEditting}))}></div> 
+					<div className='fa fa-edit p-2' onClick={()=>this.setState(ps=>({isEditting: !ps.isEditting}))}></div> 
 					|
-					<div className='far fa-trash-alt p-2' onClick={()=>fun.deleteProject(project.id)}></div> 
+					<div className='fa fa-trash p-2' onClick={()=>fun.deleteProject(project.id)}></div> 
 				</div>
 			}
 		</AppContext.Consumer>
@@ -35,7 +35,7 @@ export default class ProjectForm extends React.Component {
 					onMouseEnter={e=> this.setState({hovered:true})}
 					onMouseLeave={e=> this.setState({hovered:false})}
 				>
-					<div className='fa fa-calendar-alt shadow-blue p-2'></div> 
+					<div className='fa fa-calendar shadow-blue p-2'></div> 
 					<div> 
 						{ isEditting
 							? <InputGroup>

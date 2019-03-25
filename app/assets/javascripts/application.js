@@ -18,8 +18,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
-//= require bootstrap-datepicker
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.ua.js
 //= require_tree .
 
 

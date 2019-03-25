@@ -41,11 +41,13 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'webpacker'
-gem 'font-awesome-sass'
+# gem 'font-awesome-sass', '~>4.7.0'
+gem 'font-awesome-rails'
 gem 'devise'
 gem 'jquery-rails'
 # gem 'jquery-ui-rails'
 gem 'bootstrap', '~> 4.3.1'
+# gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'bootstrap-datepicker-rails'
 
 # interesting datetime picker 
