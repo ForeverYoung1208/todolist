@@ -49,7 +49,7 @@ tasks = [
 	Task.where(id: 2).first_or_create(
 		name: 'Second test task',
 		project: projects[0],
-		priority: 1,
+		priority: 2,
 		status: statuses[1],
 		deadline: DateTime.parse("2019-03-31 23:59:59"),
 		user: user
@@ -57,7 +57,7 @@ tasks = [
 	Task.where(id: 3).first_or_create(
 		name: 'Third test task',
 		project: projects[1],
-		priority: 1,
+		priority: 3,
 		status: statuses[2],
 		deadline: DateTime.parse("2019-03-31 23:59:59"),
 		user: user
@@ -65,7 +65,7 @@ tasks = [
 	Task.where(id: 4).first_or_create(
 		name: 'Fourth test task',
 		project: projects[1],
-		priority: 1,
+		priority: 4,
 		status: statuses[3],
 		deadline: DateTime.parse("2019-03-31 23:59:59"),
 		user: user
