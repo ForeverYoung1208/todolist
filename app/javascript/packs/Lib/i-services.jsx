@@ -3,7 +3,8 @@ import React from 'react'
 export const fetchJSONfrom = (url) => {
 	return fetch(url,
 		{	method: 'GET',
-			headers: {'Content-Type': 'application/json'}
+			headers: {'Content-Type': 'application/json'},
+      credentials: 'same-origin'
 		}
 	).then( (r) => r.json() )
 }
