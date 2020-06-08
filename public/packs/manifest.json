@@ -1,8 +1,9 @@
 {
-  "Lib/i-Modal.js": "/packs/js/Lib/i-Modal-bcdbc2532412e5c8f5d7.js",
-  "Lib/i-Modal.js.map": "/packs/js/Lib/i-Modal-bcdbc2532412e5c8f5d7.js.map",
-  "Lib/i-services.js": "/packs/js/Lib/i-services-b4c7c10bdb0e391bdcf8.js",
-  "Lib/i-services.js.map": "/packs/js/Lib/i-services-b4c7c10bdb0e391bdcf8.js.map",
+  "Lib/i-Modal.js": "/packs/js/Lib/i-Modal-0ac5ab77a4c5d30f8ee8.js",
+  "Lib/i-Modal.js.map": "/packs/js/Lib/i-Modal-0ac5ab77a4c5d30f8ee8.js.map",
+  "Lib/i-services.css": "/packs/css/Lib/i-services-d987fef2.css",
+  "Lib/i-services.js": "/packs/js/Lib/i-services-09fcc0dc3d0c46cf0a4f.js",
+  "Lib/i-services.js.map": "/packs/js/Lib/i-services-09fcc0dc3d0c46cf0a4f.js.map",
   "TodoApp/Project/Task/task.js": "/packs/js/TodoApp/Project/Task/task-ca3dad32e9aa526be13f.js",
   "TodoApp/Project/Task/task.js.map": "/packs/js/TodoApp/Project/Task/task-ca3dad32e9aa526be13f.js.map",
   "TodoApp/Project/Task/taskForm.js": "/packs/js/TodoApp/Project/Task/taskForm-12a4a8647b2cc886bf0c.js",
@@ -16,26 +17,29 @@
   "entrypoints": {
     "Lib/i-Modal": {
       "js": [
-        "/packs/js/Lib/i-Modal-bcdbc2532412e5c8f5d7.js"
+        "/packs/js/Lib/i-Modal-0ac5ab77a4c5d30f8ee8.js"
       ],
       "js.map": [
-        "/packs/js/Lib/i-Modal-bcdbc2532412e5c8f5d7.js.map"
+        "/packs/js/Lib/i-Modal-0ac5ab77a4c5d30f8ee8.js.map"
       ]
     },
     "Lib/i-services": {
+      "css": [
+        "/packs/css/Lib/i-services-d987fef2.css"
+      ],
       "js": [
-        "/packs/js/Lib/i-services-b4c7c10bdb0e391bdcf8.js"
+        "/packs/js/Lib/i-services-09fcc0dc3d0c46cf0a4f.js"
       ],
       "js.map": [
-        "/packs/js/Lib/i-services-b4c7c10bdb0e391bdcf8.js.map"
+        "/packs/js/Lib/i-services-09fcc0dc3d0c46cf0a4f.js.map"
       ]
     },
     "todo-main": {
       "js": [
-        "/packs/js/todo-main-9cdde4d661257a7f65f6.js"
+        "/packs/js/todo-main-ae5e59b8c29e4cbf63dd.js"
       ],
       "js.map": [
-        "/packs/js/todo-main-9cdde4d661257a7f65f6.js.map"
+        "/packs/js/todo-main-ae5e59b8c29e4cbf63dd.js.map"
       ]
     },
     "TodoApp/Project/project": {
@@ -79,6 +83,6 @@
       ]
     }
   },
-  "todo-main.js": "/packs/js/todo-main-9cdde4d661257a7f65f6.js",
-  "todo-main.js.map": "/packs/js/todo-main-9cdde4d661257a7f65f6.js.map"
+  "todo-main.js": "/packs/js/todo-main-ae5e59b8c29e4cbf63dd.js",
+  "todo-main.js.map": "/packs/js/todo-main-ae5e59b8c29e4cbf63dd.js.map"
 }
