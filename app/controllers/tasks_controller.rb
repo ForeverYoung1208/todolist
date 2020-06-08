@@ -27,7 +27,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.user_id = current_user.id
     @task.status_id = ::STATUS_ID_START
-    @task.priority = Task.maximum(:priority)+1
+    @task.priority = Task.maximum(:priority) ? Task.maximum(:priority) + 1 : 1
 
     respond_to do |format|
       if @task.save

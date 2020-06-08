@@ -1,88 +1,84 @@
 {
-  "Lib/i-Modal.js": "/packs/js/Lib/i-Modal-0ac5ab77a4c5d30f8ee8.js",
-  "Lib/i-Modal.js.map": "/packs/js/Lib/i-Modal-0ac5ab77a4c5d30f8ee8.js.map",
-  "Lib/i-services.css": "/packs/css/Lib/i-services-d987fef2.css",
-  "Lib/i-services.js": "/packs/js/Lib/i-services-09fcc0dc3d0c46cf0a4f.js",
-  "Lib/i-services.js.map": "/packs/js/Lib/i-services-09fcc0dc3d0c46cf0a4f.js.map",
-  "TodoApp/Project/Task/task.js": "/packs/js/TodoApp/Project/Task/task-95a48157999bc7095efd.js",
-  "TodoApp/Project/Task/task.js.map": "/packs/js/TodoApp/Project/Task/task-95a48157999bc7095efd.js.map",
-  "TodoApp/Project/Task/taskForm.js": "/packs/js/TodoApp/Project/Task/taskForm-24b18d93ef808642ecbb.js",
-  "TodoApp/Project/Task/taskForm.js.map": "/packs/js/TodoApp/Project/Task/taskForm-24b18d93ef808642ecbb.js.map",
-  "TodoApp/Project/project.js": "/packs/js/TodoApp/Project/project-abd1e9750725a4c89151.js",
-  "TodoApp/Project/project.js.map": "/packs/js/TodoApp/Project/project-abd1e9750725a4c89151.js.map",
-  "TodoApp/Project/projectForm.js": "/packs/js/TodoApp/Project/projectForm-54066bcbec63c28a844b.js",
-  "TodoApp/Project/projectForm.js.map": "/packs/js/TodoApp/Project/projectForm-54066bcbec63c28a844b.js.map",
-  "TodoApp/todoApp.js": "/packs/js/TodoApp/todoApp-80435b5437719f2f2185.js",
-  "TodoApp/todoApp.js.map": "/packs/js/TodoApp/todoApp-80435b5437719f2f2185.js.map",
+  "Lib/i-Modal.js": "/packs/js/Lib/i-Modal-bd423296ae81f0baa222.js",
+  "Lib/i-Modal.js.map": "/packs/js/Lib/i-Modal-bd423296ae81f0baa222.js.map",
+  "Lib/i-services.js": "/packs/js/Lib/i-services-345214599bc44f55abef.js",
+  "Lib/i-services.js.map": "/packs/js/Lib/i-services-345214599bc44f55abef.js.map",
+  "TodoApp/Project/Task/task.js": "/packs/js/TodoApp/Project/Task/task-adc45710abc9a14c954f.js",
+  "TodoApp/Project/Task/task.js.map": "/packs/js/TodoApp/Project/Task/task-adc45710abc9a14c954f.js.map",
+  "TodoApp/Project/Task/taskForm.js": "/packs/js/TodoApp/Project/Task/taskForm-eb87efc06b01ed3403d7.js",
+  "TodoApp/Project/Task/taskForm.js.map": "/packs/js/TodoApp/Project/Task/taskForm-eb87efc06b01ed3403d7.js.map",
+  "TodoApp/Project/project.js": "/packs/js/TodoApp/Project/project-8d66e5b74889b27127d9.js",
+  "TodoApp/Project/project.js.map": "/packs/js/TodoApp/Project/project-8d66e5b74889b27127d9.js.map",
+  "TodoApp/Project/projectForm.js": "/packs/js/TodoApp/Project/projectForm-e60fd4c759220293f54c.js",
+  "TodoApp/Project/projectForm.js.map": "/packs/js/TodoApp/Project/projectForm-e60fd4c759220293f54c.js.map",
+  "TodoApp/todoApp.js": "/packs/js/TodoApp/todoApp-20b92037def4c87c9370.js",
+  "TodoApp/todoApp.js.map": "/packs/js/TodoApp/todoApp-20b92037def4c87c9370.js.map",
   "entrypoints": {
     "Lib/i-Modal": {
       "js": [
-        "/packs/js/Lib/i-Modal-0ac5ab77a4c5d30f8ee8.js"
+        "/packs/js/Lib/i-Modal-bd423296ae81f0baa222.js"
       ],
       "js.map": [
-        "/packs/js/Lib/i-Modal-0ac5ab77a4c5d30f8ee8.js.map"
+        "/packs/js/Lib/i-Modal-bd423296ae81f0baa222.js.map"
       ]
     },
     "Lib/i-services": {
-      "css": [
-        "/packs/css/Lib/i-services-d987fef2.css"
-      ],
       "js": [
-        "/packs/js/Lib/i-services-09fcc0dc3d0c46cf0a4f.js"
+        "/packs/js/Lib/i-services-345214599bc44f55abef.js"
       ],
       "js.map": [
-        "/packs/js/Lib/i-services-09fcc0dc3d0c46cf0a4f.js.map"
+        "/packs/js/Lib/i-services-345214599bc44f55abef.js.map"
       ]
     },
     "todo-main": {
       "js": [
-        "/packs/js/todo-main-998588aef5206f735df1.js"
+        "/packs/js/todo-main-c7ae6af9c0146ceefad9.js"
       ],
       "js.map": [
-        "/packs/js/todo-main-998588aef5206f735df1.js.map"
+        "/packs/js/todo-main-c7ae6af9c0146ceefad9.js.map"
       ]
     },
     "TodoApp/Project/project": {
       "js": [
-        "/packs/js/TodoApp/Project/project-abd1e9750725a4c89151.js"
+        "/packs/js/TodoApp/Project/project-8d66e5b74889b27127d9.js"
       ],
       "js.map": [
-        "/packs/js/TodoApp/Project/project-abd1e9750725a4c89151.js.map"
+        "/packs/js/TodoApp/Project/project-8d66e5b74889b27127d9.js.map"
       ]
     },
     "TodoApp/Project/projectForm": {
       "js": [
-        "/packs/js/TodoApp/Project/projectForm-54066bcbec63c28a844b.js"
+        "/packs/js/TodoApp/Project/projectForm-e60fd4c759220293f54c.js"
       ],
       "js.map": [
-        "/packs/js/TodoApp/Project/projectForm-54066bcbec63c28a844b.js.map"
+        "/packs/js/TodoApp/Project/projectForm-e60fd4c759220293f54c.js.map"
       ]
     },
     "TodoApp/Project/Task/task": {
       "js": [
-        "/packs/js/TodoApp/Project/Task/task-95a48157999bc7095efd.js"
+        "/packs/js/TodoApp/Project/Task/task-adc45710abc9a14c954f.js"
       ],
       "js.map": [
-        "/packs/js/TodoApp/Project/Task/task-95a48157999bc7095efd.js.map"
+        "/packs/js/TodoApp/Project/Task/task-adc45710abc9a14c954f.js.map"
       ]
     },
     "TodoApp/Project/Task/taskForm": {
       "js": [
-        "/packs/js/TodoApp/Project/Task/taskForm-24b18d93ef808642ecbb.js"
+        "/packs/js/TodoApp/Project/Task/taskForm-eb87efc06b01ed3403d7.js"
       ],
       "js.map": [
-        "/packs/js/TodoApp/Project/Task/taskForm-24b18d93ef808642ecbb.js.map"
+        "/packs/js/TodoApp/Project/Task/taskForm-eb87efc06b01ed3403d7.js.map"
       ]
     },
     "TodoApp/todoApp": {
       "js": [
-        "/packs/js/TodoApp/todoApp-80435b5437719f2f2185.js"
+        "/packs/js/TodoApp/todoApp-20b92037def4c87c9370.js"
       ],
       "js.map": [
-        "/packs/js/TodoApp/todoApp-80435b5437719f2f2185.js.map"
+        "/packs/js/TodoApp/todoApp-20b92037def4c87c9370.js.map"
       ]
     }
   },
-  "todo-main.js": "/packs/js/todo-main-998588aef5206f735df1.js",
-  "todo-main.js.map": "/packs/js/todo-main-998588aef5206f735df1.js.map"
+  "todo-main.js": "/packs/js/todo-main-c7ae6af9c0146ceefad9.js",
+  "todo-main.js.map": "/packs/js/todo-main-c7ae6af9c0146ceefad9.js.map"
 }

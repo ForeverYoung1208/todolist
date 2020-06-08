@@ -176,7 +176,7 @@ export default class TodoApp extends React.Component {
 					<div className="row justify-content-md-center header">
 						<div className="col-md-8">					
 							<h4>Simple todo lists</h4>
-							<span>From ruby garage</span>
+							<span>Just pet react.js project</span>
 						</div>
 					</div>
 
@@ -189,7 +189,7 @@ export default class TodoApp extends React.Component {
 							<div className="fa fa-2x fa-plus shadow-blue"></div> <div>Add TODO List</div>
 						</button>
 					</div>
-					<footer> Test task for Ruby Garage by Ihor</footer>
+					<footer> Simple todo list by Ihor</footer>
 				</div>
 			</AppContext.Provider>
 		)
